@@ -38,10 +38,22 @@ graph TB
     IPC --> Tauri
     Tauri --> DiffEngine
     
-    style UI fill:#e3f2fd
-    style App fill:#fff3e0
-    style Core fill:#fce4ec
-    style IPC fill:#c8e6c9
+    style UI fill:#4A90E2,stroke:#2E5C8A,stroke-width:2px,color:#fff
+    style React fill:#2980B9,stroke:#1A5276,stroke-width:2px,color:#fff
+    style App fill:#E67E22,stroke:#A0522D,stroke-width:2px,color:#fff
+    style Tauri fill:#D35400,stroke:#873600,stroke-width:2px,color:#fff
+    style Core fill:#C0392B,stroke:#7B241C,stroke-width:2px,color:#fff
+    style DiffEngine fill:#922B21,stroke:#641E16,stroke-width:2px,color:#fff
+    style IPC fill:#27AE60,stroke:#1E8449,stroke-width:2px,color:#fff
+    style Monaco fill:#1A5276,stroke:#0E2C47,stroke-width:2px,color:#fff
+    style DiffViewer fill:#1A5276,stroke:#0E2C47,stroke-width:2px,color:#fff
+    style FilePicker fill:#1A5276,stroke:#0E2C47,stroke-width:2px,color:#fff
+    style CommandHandler fill:#873600,stroke:#5C2400,stroke-width:2px,color:#fff
+    style DialogAPI fill:#873600,stroke:#5C2400,stroke-width:2px,color:#fff
+    style FileSystem fill:#873600,stroke:#5C2400,stroke-width:2px,color:#fff
+    style Myers fill:#641E16,stroke:#3E0E0D,stroke-width:2px,color:#fff
+    style TextParser fill:#641E16,stroke:#3E0E0D,stroke-width:2px,color:#fff
+    style ResultBuilder fill:#641E16,stroke:#3E0E0D,stroke-width:2px,color:#fff
 ```
 
 ## Component Breakdown

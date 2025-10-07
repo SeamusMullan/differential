@@ -69,10 +69,10 @@ graph TB
     
     TauriAPI <-->|IPC<br/>Type-safe JSON-RPC| DiffEngine
     
-    style Frontend fill:#e1f5ff
-    style Backend fill:#fff4e1
-    style Monaco fill:#b3e5fc
-    style DiffEngine fill:#ffe0b2
+    style Frontend fill:#4A90E2,stroke:#2E5C8A,stroke-width:2px,color:#fff
+    style Backend fill:#E67E22,stroke:#A0522D,stroke-width:2px,color:#fff
+    style Monaco fill:#2980B9,stroke:#1A5276,stroke-width:2px,color:#fff
+    style DiffEngine fill:#D35400,stroke:#873600,stroke-width:2px,color:#fff
 ```
 
 ## Tech Stack
