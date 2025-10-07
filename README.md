@@ -62,12 +62,15 @@ The built application will be in `src-tauri/target/release/bundle/`.
 │  │    Monaco Diff Editor         │  │
 │  │  (Syntax Highlighting, UI)    │  │
 │  └───────────────────────────────┘  │
-│              ↕️ IPC                  │
+|                /\                   |
+│               IPC                   │
+|                \/                   |
 │  ┌───────────────────────────────┐  │
 │  │   Tauri API Layer             │  │
 │  └───────────────────────────────┘  │
 └─────────────────────────────────────┘
-                ↕️
+                  /\
+                  \/
 ┌─────────────────────────────────────┐
 │       Backend (Rust + Tauri)        │
 │  ┌───────────────────────────────┐  │
