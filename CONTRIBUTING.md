@@ -2,11 +2,11 @@
 
 Thank you for considering contributing to Differential! This document provides guidelines and instructions for contributing.
 
-## 🎯 Code of Conduct
+## Code of Conduct
 
 By participating in this project, you agree to maintain a respectful and inclusive environment for everyone.
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -41,7 +41,7 @@ By participating in this project, you agree to maintain a respectful and inclusi
    bun run tauri dev
    ```
 
-## 📝 Development Workflow
+## Development Workflow
 
 ### Branch Naming Convention
 
@@ -114,7 +114,7 @@ By participating in this project, you agree to maintain a respectful and inclusi
    - Select your branch
    - Fill out the PR template with details
 
-## 🏗️ Project Structure
+## Project Structure
 
 ```text
 differential/
@@ -135,7 +135,7 @@ differential/
 └── .github/                # GitHub workflows and templates
 ```
 
-## 🎨 Code Style Guidelines
+## Code Style Guidelines
 
 ### TypeScript/React
 
@@ -182,7 +182,7 @@ pub fn compute_diff(left: &str, right: &str) -> DiffResult {
 }
 ```
 
-## 🧪 Testing
+## Testing
 
 - Write unit tests for new functionality
 - Test edge cases and error conditions
@@ -211,14 +211,14 @@ mod tests {
 }
 ```
 
-## 📚 Documentation
+## Documentation
 
 - Update README.md if you add new features
 - Add inline comments for complex logic
 - Update API documentation for public functions
 - Create examples for new functionality
 
-## 🐛 Reporting Bugs
+## Reporting Bugs
 
 When reporting bugs, please include:
 
@@ -230,7 +230,7 @@ When reporting bugs, please include:
 6. **Screenshots** - If applicable
 7. **Error Logs** - Console output or error messages
 
-## 💡 Suggesting Features
+## Suggesting Features
 
 Feature requests are welcome! Please include:
 
@@ -239,7 +239,7 @@ Feature requests are welcome! Please include:
 3. **Alternatives** - Other solutions you've considered
 4. **Examples** - Mock-ups or examples from other tools
 
-## ✅ Pull Request Checklist
+## Pull Request Checklist
 
 Before submitting a PR, ensure:
 
@@ -251,14 +251,14 @@ Before submitting a PR, ensure:
 - [ ] No linting errors
 - [ ] PR description clearly explains changes
 
-## 🤝 Community
+## Community
 
 - Be respectful and inclusive
 - Help others learn and grow
 - Give constructive feedback
 - Celebrate contributions of all sizes
 
-## 📬 Questions?
+## Questions?
 
 If you have questions, feel free to:
 
@@ -266,4 +266,4 @@ If you have questions, feel free to:
 - Reach out to the maintainers
 - Check existing issues and PRs
 
-Thank you for contributing to Differential! 🎉
+Thank you for contributing to Differential!

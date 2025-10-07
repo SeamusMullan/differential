@@ -1,6 +1,6 @@
 # API Reference ☉
 
-## Tauri Commands (Rust → TypeScript)
+## Tauri Commands (Rust -> TypeScript)
 
 ### `compute_diff`
 

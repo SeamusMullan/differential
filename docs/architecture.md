@@ -18,10 +18,12 @@ Differential is a cross-platform visual diff tool built with a modern hybrid arc
 │  │  └────────────┘  └────────────┘  └────────────┘     │   │
 │  └──────────────────────────────────────────────────────┘   │
 └──────────────────────────────────────────────────────────────┘
-                             ↕️
+                             |
+                             v
                       Tauri IPC Bridge
                      (Type-safe JSON-RPC)
-                             ↕️
+                             |
+                             v
 ┌──────────────────────────────────────────────────────────────┐
 │                     Application Layer                         │
 │                                                                │
@@ -33,7 +35,8 @@ Differential is a cross-platform visual diff tool built with a modern hybrid arc
 │  │  └────────────┘  └────────────┘  └────────────┘     │   │
 │  └──────────────────────────────────────────────────────┘   │
 └──────────────────────────────────────────────────────────────┘
-                             ↕️
+                             |
+                             v
 ┌──────────────────────────────────────────────────────────────┐
 │                       Core Logic Layer                        │
 │                                                                │
@@ -115,21 +118,29 @@ Differential is a cross-platform visual diff tool built with a modern hybrid arc
 
 ```text
 1. User clicks "Open File" button
-   ↓
+   |
+   v
 2. Frontend calls `select_file` command
-   ↓
+   |
+   v
 3. Tauri opens native file dialog
-   ↓
+   |
+   v
 4. User selects file
-   ↓
+   |
+   v
 5. Tauri returns file path
-   ↓
+   |
+   v
 6. Frontend calls `read_file` with path
-   ↓
+   |
+   v
 7. Rust reads file contents
-   ↓
+   |
+   v
 8. Contents returned to frontend
-   ↓
+   |
+   v
 9. Monaco editor displays content
 ```
 
@@ -137,19 +148,26 @@ Differential is a cross-platform visual diff tool built with a modern hybrid arc
 
 ```text
 1. Frontend has two file contents
-   ↓
+   |
+   v
 2. Sends both to `compute_diff` command
-   ↓
+   |
+   v
 3. Rust diff engine processes texts
-   ↓
+   |
+   v
 4. Myers algorithm generates diff
-   ↓
+   |
+   v
 5. Results formatted as structured data
-   ↓
+   |
+   v
 6. JSON serialized and sent to frontend
-   ↓
+   |
+   v
 7. Frontend parses diff results
-   ↓
+   |
+   v
 8. Monaco displays diff with highlighting
 ```
 

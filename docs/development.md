@@ -414,4 +414,4 @@ bun run tauri build
 - Search existing issues
 - Ask in discussions
 
-Happy coding! 🚀
+Happy coding!

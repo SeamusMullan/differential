@@ -7,22 +7,22 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.8-blue.svg)](https://www.typescriptlang.org/)
 [![Rust](https://img.shields.io/badge/Rust-1.70+-orange.svg)](https://www.rust-lang.org/)
 
-## ✨ Features
+## Features
 
-- **🚀 Blazingly Fast** - Rust-powered diff algorithms for instant comparison
-- **💡 Syntax Highlighting** - Support for 100+ programming languages via Monaco Editor
-- **🎨 Beautiful UI** - Clean, modern interface powered by VS Code's editor
-- **📦 Lightweight** - ~15MB bundle size (vs 100MB+ for Electron alternatives)
-- **🖥️ Cross-Platform** - Native builds for macOS, Windows, and Linux
-- **⚡ Real-time Diff** - See changes instantly as you load files
-- **🎯 Side-by-Side View** - Synchronized scrolling and line highlighting
-- **📂 Drag & Drop** - Easy file loading with native file picker support
+- **Blazingly Fast** - Rust-powered diff algorithms for instant comparison
+- **Syntax Highlighting** - Support for 100+ programming languages via Monaco Editor
+- **Beautiful UI** - Clean, modern interface powered by VS Code's editor
+- **Lightweight** - ~15MB bundle size (vs 100MB+ for Electron alternatives)
+- **Cross-Platform** - Native builds for macOS, Windows, and Linux
+- **Real-time Diff** - See changes instantly as you load files
+- **Side-by-Side View** - Synchronized scrolling and line highlighting
+- **Drag & Drop** - Easy file loading with native file picker support
 
-## 🎬 Screenshots
+## Screenshots
 
 > Coming soon
 
-## 🚀 Quick Start
+## Quick Start
 
 ### Prerequisites
 
@@ -53,7 +53,7 @@ bun run tauri build
 
 The built application will be in `src-tauri/target/release/bundle/`.
 
-## 🏗️ Architecture
+## Architecture
 
 ```text
 ┌─────────────────────────────────────┐
@@ -79,7 +79,7 @@ The built application will be in `src-tauri/target/release/bundle/`.
 └─────────────────────────────────────┘
 ```
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -94,7 +94,7 @@ The built application will be in `src-tauri/target/release/bundle/`.
 - **Tauri 2** - Desktop app framework
 - **similar** - High-performance diff algorithm library
 
-## 📚 Documentation
+## Documentation
 
 For detailed documentation, see the [docs](./docs) directory:
 
@@ -103,7 +103,7 @@ For detailed documentation, see the [docs](./docs) directory:
 - [API Reference](./docs/api.md)
 - [Contributing Guidelines](./CONTRIBUTING.md)
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Please read our [Contributing Guidelines](./CONTRIBUTING.md) first.
 
@@ -113,30 +113,30 @@ Contributions are welcome! Please read our [Contributing Guidelines](./CONTRIBUT
 4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
-## 📝 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](./LICENSE) file for details.
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [Tauri](https://tauri.app) - For the amazing desktop framework
 - [Monaco Editor](https://microsoft.github.io/monaco-editor/) - For the powerful text editor
 - [similar](https://github.com/mitsuhiko/similar) - For the fast diff algorithms
 
-## 📊 Project Status
+## Project Status
 
-🚧 **This project is currently in active development.** 🚧
+[IN DEVELOPMENT] This project is currently in active development.
 
-- [x] Project setup
-- [ ] Core diff functionality
-- [ ] Monaco Editor integration
-- [ ] File system operations
-- [ ] UI/UX polish
-- [ ] Cross-platform builds
-- [ ] Documentation
-- [ ] v1.0 Release
+[x] Project setup
+[ ] Core diff functionality
+[ ] Monaco Editor integration
+[ ] File system operations
+[ ] UI/UX polish
+[ ] Cross-platform builds
+[ ] Documentation
+[ ] v1.0 Release
 
-## 💬 Contact
+## Contact
 
 Seamus Mullan - [@seamusmullan](https://github.com/seamusmullan)
 
