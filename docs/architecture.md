@@ -6,48 +6,42 @@ Differential is a cross-platform visual diff tool built with a modern hybrid arc
 
 ## Architecture Diagram
 
-```text
-┌──────────────────────────────────────────────────────────────┐
-│                      User Interface Layer                     │
-│                                                                │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │              React Application                        │   │
-│  │  ┌────────────┐  ┌────────────┐  ┌────────────┐     │   │
-│  │  │  Monaco    │  │   Diff     │  │  File      │     │   │
-│  │  │  Editor    │  │   Viewer   │  │  Picker    │     │   │
-│  │  └────────────┘  └────────────┘  └────────────┘     │   │
-│  └──────────────────────────────────────────────────────┘   │
-└──────────────────────────────────────────────────────────────┘
-                             |
-                             v
-                      Tauri IPC Bridge
-                     (Type-safe JSON-RPC)
-                             |
-                             v
-┌──────────────────────────────────────────────────────────────┐
-│                     Application Layer                         │
-│                                                                │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │              Tauri Runtime                            │   │
-│  │  ┌────────────┐  ┌────────────┐  ┌────────────┐     │   │
-│  │  │  Command   │  │  Dialog    │  │  File      │     │   │
-│  │  │  Handler   │  │  API       │  │  System    │     │   │
-│  │  └────────────┘  └────────────┘  └────────────┘     │   │
-│  └──────────────────────────────────────────────────────┘   │
-└──────────────────────────────────────────────────────────────┘
-                             |
-                             v
-┌──────────────────────────────────────────────────────────────┐
-│                       Core Logic Layer                        │
-│                                                                │
-│  ┌──────────────────────────────────────────────────────┐   │
-│  │              Diff Engine (Rust)                       │   │
-│  │  ┌────────────┐  ┌────────────┐  ┌────────────┐     │   │
-│  │  │  Myers     │  │  Text      │  │  Result    │     │   │
-│  │  │  Algorithm │  │  Parser    │  │  Builder   │     │   │
-│  │  └────────────┘  └────────────┘  └────────────┘     │   │
-│  └──────────────────────────────────────────────────────┘   │
-└──────────────────────────────────────────────────────────────┘
+```mermaid
+graph TB
+    subgraph UI["User Interface Layer"]
+        subgraph React["React Application"]
+            Monaco[Monaco Editor]
+            DiffViewer[Diff Viewer]
+            FilePicker[File Picker]
+        end
+    end
+    
+    IPC[Tauri IPC Bridge<br/>Type-safe JSON-RPC]
+    
+    subgraph App["Application Layer"]
+        subgraph Tauri["Tauri Runtime"]
+            CommandHandler[Command Handler]
+            DialogAPI[Dialog API]
+            FileSystem[File System]
+        end
+    end
+    
+    subgraph Core["Core Logic Layer"]
+        subgraph DiffEngine["Diff Engine (Rust)"]
+            Myers[Myers Algorithm]
+            TextParser[Text Parser]
+            ResultBuilder[Result Builder]
+        end
+    end
+    
+    React --> IPC
+    IPC --> Tauri
+    Tauri --> DiffEngine
+    
+    style UI fill:#e3f2fd
+    style App fill:#fff3e0
+    style Core fill:#fce4ec
+    style IPC fill:#c8e6c9
 ```
 
 ## Component Breakdown
@@ -116,59 +110,45 @@ Differential is a cross-platform visual diff tool built with a modern hybrid arc
 
 ### Opening Files
 
-```text
-1. User clicks "Open File" button
-   |
-   v
-2. Frontend calls `select_file` command
-   |
-   v
-3. Tauri opens native file dialog
-   |
-   v
-4. User selects file
-   |
-   v
-5. Tauri returns file path
-   |
-   v
-6. Frontend calls `read_file` with path
-   |
-   v
-7. Rust reads file contents
-   |
-   v
-8. Contents returned to frontend
-   |
-   v
-9. Monaco editor displays content
+```mermaid
+sequenceDiagram
+    actor User
+    participant Frontend
+    participant Tauri
+    participant Rust
+    participant Monaco
+    
+    User->>Frontend: Click "Open File" button
+    Frontend->>Tauri: Call select_file command
+    Tauri->>User: Open native file dialog
+    User->>Tauri: Select file
+    Tauri->>Frontend: Return file path
+    Frontend->>Rust: Call read_file with path
+    Rust->>Rust: Read file contents
+    Rust->>Frontend: Return contents
+    Frontend->>Monaco: Display content
 ```
 
 ### Computing Diff
 
-```text
-1. Frontend has two file contents
-   |
-   v
-2. Sends both to `compute_diff` command
-   |
-   v
-3. Rust diff engine processes texts
-   |
-   v
-4. Myers algorithm generates diff
-   |
-   v
-5. Results formatted as structured data
-   |
-   v
-6. JSON serialized and sent to frontend
-   |
-   v
-7. Frontend parses diff results
-   |
-   v
-8. Monaco displays diff with highlighting
+```mermaid
+sequenceDiagram
+    participant Frontend
+    participant Tauri
+    participant DiffEngine as Diff Engine
+    participant Myers as Myers Algorithm
+    participant Monaco
+    
+    Frontend->>Frontend: Has two file contents
+    Frontend->>Tauri: Send compute_diff command
+    Tauri->>DiffEngine: Process texts
+    DiffEngine->>Myers: Generate diff
+    Myers->>DiffEngine: Return diff data
+    DiffEngine->>DiffEngine: Format as structured data
+    DiffEngine->>Tauri: Serialize to JSON
+    Tauri->>Frontend: Return diff results
+    Frontend->>Frontend: Parse results
+    Frontend->>Monaco: Display diff with highlighting
 ```
 
 ## Technology Choices

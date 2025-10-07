@@ -55,31 +55,24 @@ The built application will be in `src-tauri/target/release/bundle/`.
 
 ## Architecture
 
-```text
-┌─────────────────────────────────────┐
-│         Frontend (React)            │
-│  ┌───────────────────────────────┐  │
-│  │    Monaco Diff Editor         │  │
-│  │  (Syntax Highlighting, UI)    │  │
-│  └───────────────────────────────┘  │
-|                /\                   |
-│               IPC                   │
-|                \/                   |
-│  ┌───────────────────────────────┐  │
-│  │   Tauri API Layer             │  │
-│  └───────────────────────────────┘  │
-└─────────────────────────────────────┘
-                  /\
-                  \/
-┌─────────────────────────────────────┐
-│       Backend (Rust + Tauri)        │
-│  ┌───────────────────────────────┐  │
-│  │   Diff Engine                 │  │
-│  │   - Text comparison           │  │
-│  │   - Line-by-line analysis     │  │
-│  │   - File I/O operations       │  │
-│  └───────────────────────────────┘  │
-└─────────────────────────────────────┘
+```mermaid
+graph TB
+    subgraph Frontend["Frontend Layer (React + TypeScript)"]
+        Monaco[Monaco Diff Editor<br/>Syntax Highlighting & UI]
+        TauriAPI[Tauri API Layer]
+        Monaco <--> TauriAPI
+    end
+    
+    subgraph Backend["Backend Layer (Rust + Tauri)"]
+        DiffEngine[Diff Engine<br/>- Text comparison<br/>- Line-by-line analysis<br/>- File I/O operations]
+    end
+    
+    TauriAPI <-->|IPC<br/>Type-safe JSON-RPC| DiffEngine
+    
+    style Frontend fill:#e1f5ff
+    style Backend fill:#fff4e1
+    style Monaco fill:#b3e5fc
+    style DiffEngine fill:#ffe0b2
 ```
 
 ## Tech Stack
