@@ -128,16 +128,16 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 
 ## Project Status
 
-[IN DEVELOPMENT] This project is currently in active development.
+### [IN DEVELOPMENT] This project is currently in active development.
 
-[x] Project setup
-[ ] Core diff functionality
-[ ] Monaco Editor integration
-[ ] File system operations
-[ ] UI/UX polish
-[ ] Cross-platform builds
-[ ] Documentation
-[ ] v1.0 Release
+- [x] Project setup
+- [ ] Core diff functionality
+- [ ] Monaco Editor integration
+- [ ] File system operations
+- [ ] UI/UX polish
+- [ ] Cross-platform builds
+- [ ] Documentation
+- [ ] v1.0 Release
 
 ## Contact
 
