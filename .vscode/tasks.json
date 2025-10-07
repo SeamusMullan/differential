@@ -1,0 +1,48 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Tauri: Dev",
+      "type": "shell",
+      "command": "bun",
+      "args": ["run", "tauri", "dev"],
+      "problemMatcher": ["$rustc"],
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      }
+    },
+    {
+      "label": "Tauri: Build",
+      "type": "shell",
+      "command": "bun",
+      "args": ["run", "tauri", "build"],
+      "problemMatcher": ["$rustc"],
+      "group": "build"
+    },
+    {
+      "label": "Cargo: Check",
+      "type": "shell",
+      "command": "cargo",
+      "args": ["check", "--manifest-path=./src-tauri/Cargo.toml"],
+      "problemMatcher": ["$rustc"],
+      "group": "build"
+    },
+    {
+      "label": "Cargo: Clippy",
+      "type": "shell",
+      "command": "cargo",
+      "args": ["clippy", "--manifest-path=./src-tauri/Cargo.toml"],
+      "problemMatcher": ["$rustc"],
+      "group": "test"
+    },
+    {
+      "label": "TypeScript: Check",
+      "type": "shell",
+      "command": "bun",
+      "args": ["run", "tsc", "--noEmit"],
+      "problemMatcher": ["$tsc"],
+      "group": "test"
+    }
+  ]
+}

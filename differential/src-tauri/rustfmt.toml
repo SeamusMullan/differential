@@ -1,0 +1,41 @@
+# Use the system default formatter
+edition = "2021"
+
+# Formatting options
+max_width = 100
+hard_tabs = false
+tab_spaces = 4
+newline_style = "Auto"
+use_small_heuristics = "Default"
+reorder_imports = true
+reorder_modules = true
+remove_nested_parens = true
+
+# Import formatting
+imports_granularity = "Crate"
+imports_layout = "Mixed"
+
+# Function formatting
+fn_single_line = false
+where_single_line = false
+
+# Spacing
+space_before_colon = false
+space_after_colon = true
+spaces_around_ranges = false
+
+# Trailing commas
+trailing_comma = "Vertical"
+trailing_semicolon = true
+
+# Match formatting
+match_block_trailing_comma = true
+match_arm_trailing_comma = true
+
+# Comments
+normalize_comments = true
+wrap_comments = true
+comment_width = 80
+
+# Documentation
+normalize_doc_attributes = true
